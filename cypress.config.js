@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+
 const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
@@ -23,5 +23,8 @@ module.exports = defineConfig({
       await addCucumberPreprocessorPlugin(on, config);
       return config;
     },
+    failOnStatusCode: false,
+    chromeWebSecurity: false
   }
+  
 });  
